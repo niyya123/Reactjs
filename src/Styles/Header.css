@@ -1,0 +1,30 @@
+.logo
+{
+    width: 70px;
+    height: auto;
+}
+
+.brand
+{
+    margin-left: 2%;
+    font-size: 25px;
+    margin-right: 5%;
+}
+
+.menuDropdown
+{
+    display: flex;
+    position: relative;
+    margin-right: 60px;
+}
+
+.navBtn{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+.tkBtn{
+    text-decoration: none;
+    color: black;
+}

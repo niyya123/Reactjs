@@ -1,0 +1,29 @@
+
+.post1{
+    width: 60%;
+    border: 2px solid black;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-bottom: 15px;
+}
+
+.da{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.ip{
+    border: 1px dashed black;
+    width: 30%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.anhdang{
+    margin-left: 10px;
+    width: 250px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,53 @@
+.nd1{
+    background-image:url('../Images/nd1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 500px;
+    width: 100%;
+}
+
+.nd1 h3{
+    padding-top: 220px;
+}
+
+.nd2{
+    margin-top: 100px;
+}
+
+.anhmh{
+    width: 100%;
+}
+
+.nd3{
+    margin-top: 50px;
+}
+
+.icon{
+    width: 70px;
+    height: 70px;
+}
+
+.nd4{
+    margin-top: 50px;
+}
+
+.gd{
+    color : purple
+}
+
+.ht{
+    color : red;
+}
+
+.nd5{
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}

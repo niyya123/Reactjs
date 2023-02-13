@@ -1,0 +1,133 @@
+.dk{
+    width: 35%;
+    border : 1px solid black;
+    border-radius: 10px;
+    background-color: #23323b;
+}
+
+.dk p:nth-child(1){
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+.dk p:nth-child(2){
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.dk hr{
+    border : 2px solid white
+}
+
+.ho{
+    margin-right: 20px;
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+}
+
+.ho::placeholder{
+    color: white;
+}
+
+.ten{
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+}
+
+
+.ten::placeholder{
+    color: white;
+}
+
+.email{
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+}
+
+.email::placeholder{
+    color: white;
+}
+
+.matkhau{
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+}
+
+.matkhau::placeholder{
+    color: white;
+}
+
+.sn{
+    color: white;
+}
+
+.dob{
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+.dob::placeholder{
+    color: white;
+}
+.usname{
+    border : 1px solid grey;
+    background: transparent;
+    color: white;
+    text-indent: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    width: 40%;
+    text-align: center;
+}
+
+.usname::placeholder{
+    color: white;
+}
+
+.sex{
+    margin-right: 30px;
+}
+
+.p1{
+    width: 50%;
+    color : white;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.p2{
+    color: aqua;
+    width: 60%;
+    text-align:center;
+    font-size: 17px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.btn{
+    margin: auto;
+}

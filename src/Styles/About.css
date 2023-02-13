@@ -1,0 +1,32 @@
+.banner1 {
+    background: url('../Images/petgalbg.jpg');
+    border-radius: 5px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    width: 50%;
+    margin : auto;
+    margin-top: 20px;
+}
+
+.banner1 p{
+    color: blueviolet;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.nd{
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 20px;
+}
+
+.user{
+    width : 20%;
+    border-radius: 100%;
+}
+
+.user1{
+    width : 10%;
+    border-radius: 100%;
+}
