@@ -15,14 +15,14 @@ function About() {
         <Accordion.Item eventKey="0" className='text-white bg-primary'>
           <Accordion.Header>Câu chuyện về chúng tôi</Accordion.Header>
           <Accordion.Body>
-            Các thành viên trong nhóm đều yêu thích việc xem các video, hình ảnh, tranh và các phương tiện truyền thông có nội dung liên quan đến thú cưng. Vì thế nên nhóm quyết định lựa chọn thú cưng để làm một trang web riêng cho mọi người chia sẻ khoảnh khắc bên thú cưng của mình với nhiều người khác.
+            Tôi là một người yêu thích việc xem các video, hình ảnh, tranh và các phương tiện truyền thông có nội dung liên quan đến thú cưng. Vì thế nên bản thân quyết định lựa chọn thú cưng để làm một trang web riêng cho mọi người chia sẻ khoảnh khắc bên thú cưng của mình với nhiều người khác.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1" className='text-info bg-dark'> 
           <Accordion.Header>Các thành viên</Accordion.Header>
           <Accordion.Body>
             <Container>
-              <div className="text-center">Hiện tại nhóm đang có 3 thành viên chính</div>
+              <div className="text-center">Dự án này do 1 người đảm nhận</div>
               <div className="row text-center mt-2">
                 <div className="col">
                   <div className="row">
@@ -30,24 +30,6 @@ function About() {
                   </div>
                   <div className="row">
                     <p>Huỳnh Trung Nguyên</p>
-                  </div>
-                </div>
-                <div className="col">
-                <div className="row">
-                    <img src={user} className="user mx-auto"/>
-                  </div>
-                  <div className="row">
-                    <p>Trần Hồng Cẩm Ly</p>
-                  </div>
-                </div>
-              </div>
-              <div className="row text-center mt-2">
-                <div className="col">
-                  <div className="row">
-                    <img src={user} className="user1 mx-auto"/>
-                  </div>
-                  <div className="row">
-                    <p>Vũ Ngọc Triệu</p>
                   </div>
                 </div>
               </div>

@@ -13,6 +13,7 @@
 
       const [registerEmail, setRegisterEmail] = useState()
       const [registerPassword, setRegisterPassword] = useState()
+      const [registerName, setRegisterName] = useState()
 
       const currentUser = useAuth()
 
@@ -31,7 +32,7 @@
           alert("Đăng ký thành công")
         } catch(err){
           console.log(err.message)
-          alert("Email này đã đăng ký trước đó")
+          alert("Có lỗi xảy ra với việc đăng ký")
         }
         setLoading(false);
       }

@@ -6,12 +6,13 @@ import {getStorage} from 'firebase/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD3p4zTTKbmkeoWE-1tB-ok4jEzOEm0bdk",
-  authDomain: "ktpt-a85a6.firebaseapp.com",
-  projectId: "ktpt-a85a6",
-  storageBucket: "ktpt-a85a6.appspot.com",
-  messagingSenderId: "995884297068",
-  appId: "1:995884297068:web:9204942f30292ba66e2149"
+  apiKey: "AIzaSyD9ixWmtapD1aYgqwgih-2vhOI9qGJ0d0E",
+  authDomain: "ktpthtw.firebaseapp.com",
+  databaseURL: "https://ktpthtw-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ktpthtw",
+  storageBucket: "ktpthtw.appspot.com",
+  messagingSenderId: "587887115631",
+  appId: "1:587887115631:web:a50fefba14f16dad86fc9a"
 };
 
 // Initialize Firebase
