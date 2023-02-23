@@ -6,7 +6,7 @@ import anh2 from '../Images/profile.png'
 import {Form, Button} from 'react-bootstrap'
 import { BsNewspaper } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
-
+import PaginationAdmin from '../Components/PaginationAdmin/Pagination'
 
 
 function Post() {
@@ -28,6 +28,14 @@ function Post() {
 
     getPosts()
   })
+
+  const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(3);
+    const firstPageIndex = (currentPage - 1) * postsPerPage;
+    const lastPageIndex = firstPageIndex + postsPerPage;
+    const dataEachPage = postList.slice(firstPageIndex, lastPageIndex);
+
+    if (postList.length === 0) return <p>Chưa có bài đăng nào</p>;
   
     const createPost = async () =>{
       await addDoc(postsCollectionRef,{
@@ -92,14 +100,23 @@ function Post() {
         </div>
       </div>
       <h4 className='text-success'>Bài viết mới nhất <BsNewspaper/></h4>
-        {""}
-        {postList.map((post)=>{
-        return <div className='post'>
+      <div className='post_content'>
+        {dataEachPage.map((post)=>(
+        <div key={post.author.id} className='post'>
           <h5 className='tieude text-white text-center border-bottom pb-2'>{post.title} <span className='float-end bg-dark'><button onClick={()=> {deletePost(post.id)}}>&#128465;</button></span></h5>
           <h6 className='text-white text-center'>Tác giả : {post.author.name}</h6>
           <p className='content'>{post.content}</p>
         </div>
-        })}
+        ))}
+      </div>
+      <div className='dock'>
+      <PaginationAdmin
+            className="pagination"
+            currentPage={currentPage}
+            totalCount={postList.length}
+            itemsPerPage={postsPerPage}
+            onPageChange={(page) => setCurrentPage(page)}/>
+            </div>
     </div>
   )
 }

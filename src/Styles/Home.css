@@ -16,7 +16,20 @@
 .nd2{
     margin-top: 100px;
 }
-
+.nd2 > div:nth-child(1){
+    background-image: url('/src/Images/presentation1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+.nd2_col1_content{
+    margin: auto;   
+}
+.pr2{
+    background-image: url('/src/Images/presentation2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .anhmh{
     width: 100%;
 }
