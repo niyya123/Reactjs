@@ -26,9 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +48,5 @@
   },
   "devDependencies": {
     "sass": "^1.58.3"
-  },
-  "homepage": "https://github.com/niyya123/Reactjs.git"
+  }
 }

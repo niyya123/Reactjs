@@ -8,17 +8,18 @@ import {ref, uploadBytes,listAll,getDownloadURL} from 'firebase/storage'
 import {v4} from 'uuid'
 
 import { Tabs, Tab,Form,Button,Nav } from "react-bootstrap"
-import { Cats } from '../Components/Cats'
 
 function Gallery() {
 
   const currentUser = useAuth()
   const [loading, setLoading] = useState(false);
   const [imageList, setImageList] = useState([])
+  const [imageList2, setImageList2] = useState([])
 
   const [image, setImage] = useState(null)
 
   const imageListRef = ref(storage,"Pet/Chó/")
+  const imageListRef2 = ref(storage,"Pet/Mèo/")
 
   const uploadImage = () =>{
     var e = document.getElementById('luachon')
@@ -43,6 +44,13 @@ function Gallery() {
       response.items.forEach((item)=>{
         getDownloadURL(item).then((url)=>{
           setImageList((prev)=>[...prev, url])
+        })
+      })
+    })
+    listAll(imageListRef2).then((response2)=>{
+      response2.items.forEach((item2)=>{
+        getDownloadURL(item2).then((url2)=>{
+          setImageList2((prev)=>[...prev, url2])
         })
       })
     })
@@ -94,17 +102,23 @@ function Gallery() {
     <Col sm={11}>
       <Tab.Content>
         <Tab.Pane eventKey="first">
-        <div class="text-center">
-      {imageList.map((url)=>{
-        return <div class='d-inline'>
-          <img className='anhdang' src={url}/>
+          <div class="text-center">
+            {imageList.map((url)=>{
+            return <div class='d-inline'>
+              <img className='anhdang' src={url}/>
+            </div>
+          })}
         </div>
-      })}
-    </div>
-        </Tab.Pane>
-        <Tab.Pane eventKey="second">
-          <Cats/>
-        </Tab.Pane>
+      </Tab.Pane>
+      <Tab.Pane eventKey="second">
+      <div class="text-center">
+            {imageList2.map((url2)=>{
+            return <div class='d-inline'>
+              <img className='anhdang' src={url2}/>
+            </div>
+          })}
+        </div>
+      </Tab.Pane>
       </Tab.Content>
     </Col>
   </Row>
