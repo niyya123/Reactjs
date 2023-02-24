@@ -23,7 +23,7 @@ function Home() {
         <div className="col 1 text-center">
           <div className='nd2_col1_content'>
           <div className="row ms-3  text-center">
-            <h4 className='text-info'>Giới thiệu về trang web</h4>
+            <h4 className='text-info'>Giới thiệu về Web</h4>
           </div>
           <div className="row w-75 mx-auto text-center">
             <p>PetGal là website xây dựng trên tiêu chí là nơi để mọi người chia sẻ các bài viết, hình ảnh hằng ngày về pet của họ</p>
