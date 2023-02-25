@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {Navbar,Container,Nav,Dropdown} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 import anh1 from '../Images/Screenshot 2022-05-25 111819.png'
 
@@ -13,11 +13,23 @@ import { signOut } from 'firebase/auth'
 
 
 function Header() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const currentUser = useAuth()
+  const navigate = useNavigate();
 
   const logout = async () => {
-    await signOut(auth)
+    if (!currentUser) alert("Bạn chưa đăng nhập, không thể đăng xuất được")
+    else{
+      navigate('/home')
+      await signOut(auth)
+    } 
+  }
+  const handleTest = async () => {
+    console.log(currentUser.uid);
+  }
+  const handleBio = async () => {
+    if (!currentUser) alert("Bạn chưa đăng nhập, không thể xem thông tin được")
+    else navigate('/detail')
   }
 
   return (
@@ -45,8 +57,9 @@ function Header() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item disabled={loading}><Link to="/detail" className='tkBtn'>Thông tin tài khoản</Link></Dropdown.Item>
-              <Dropdown.Item disabled={loading} onClick={logout}>Đăng xuất</Dropdown.Item>
+              <Dropdown.Item onClick={handleBio}>Thông tin tài khoản</Dropdown.Item>
+              <Dropdown.Item onClick={logout}>Đăng xuất</Dropdown.Item>
+              {/* <Dropdown.Item onClick={handleTest}>Test</Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
         </Container>
