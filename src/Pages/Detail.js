@@ -27,12 +27,14 @@ function Detail() {
     }
     console.log()
     getUsers()
-    const uniqueData = userList.find((u)=> u.email == currentUser.email);
-    setLoginUserData(uniqueData);
   })
 
   const handleTest = () =>{
     console.log(loginUser.username);
+  }
+  const handleShowInfo = () =>{
+    const uniqueData = userList.find((u)=> u.email == currentUser.email);
+    setLoginUserData(uniqueData);
   }
 
   return ( 
@@ -43,7 +45,7 @@ function Detail() {
           <header>
 
           <a>
-          <img src={anh2} className="profileImg2" alt="có thể là ảnh profile"/>
+          <img src={anh2} className="profileImg2" alt="có thể là ảnh profile" onMouseEnter={handleShowInfo}/>
           </a>
           <h2>{currentUser?.email}</h2>
 
