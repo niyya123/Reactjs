@@ -16,7 +16,7 @@ function Detail() {
   const [username, setUsername] = useState("")
 
   const [userList, setUserList] = useState([])
-  const [loginUser, setLoginUserData] = useState()
+  const [loginUser, setLoginUserData] = useState([])
 
   const usersCollectionRef = collection(db,"users")
 
@@ -52,7 +52,7 @@ function Detail() {
           <div className="profile-bio">
 
           <p>Xin chào mọi người</p>
-          <p className='text-center'>Tên người dùng : {loginUser.username}</p>
+          <p className='text-center'>Tên người dùng : {loginUser.username} </p>
           </div>
 
           <ul className="profile-social-links">
@@ -79,7 +79,7 @@ function Detail() {
 
         </aside>
       </div>
-      <button onClick={handleTest}>test</button>
+      {/* <button onClick={handleTest}>test</button> */}
     </div>
   )
 }
