@@ -35,7 +35,10 @@ function Post() {
     const lastPageIndex = firstPageIndex + postsPerPage;
     const dataEachPage = postList.slice(firstPageIndex, lastPageIndex);
 
-    if (postList.length === 0) return <p>Chưa có bài đăng nào</p>;
+    if (postList.length > 0){
+      let a = document.getElementsByClassName('noti')[0];
+      a.style.display="none";
+    }
   
     const createPost = async () =>{
       await addDoc(postsCollectionRef,{
@@ -100,6 +103,7 @@ function Post() {
         </div>
       </div>
       <h4 className='text-success'>Bài viết mới nhất <BsNewspaper/></h4>
+      <div className='text-center noti' >Không có bài đăng nào</div>
       <div className='post_content'>
         {dataEachPage.map((post)=>(
         <div key={post.author.id} className='post'>
