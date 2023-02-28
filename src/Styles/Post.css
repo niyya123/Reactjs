@@ -212,7 +212,7 @@ img{
     width: 90%;
 }
 .post{
-    background-color: #7787e0;
+    background-color: #016e74;
     width: 30%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -230,8 +230,20 @@ img{
     color : white;
     text-indent: 10px;
 }
-
-.xoa{
-    background : transparent;
-    color : red;
+.title{
+    color: white;
+    font-weight: bold;
+}
+.button_fix{
+    margin-left:5px;
+    background: rgb(18,84,190);
+background: linear-gradient(90deg, rgba(18,84,190,1) 0%, rgba(0,255,237,1) 100%);
+box-shadow: 2px 2px 1px lightblue;
+margin-right: 5px;
+}
+.button_delete{
+    color:white;
+    background-color: #362d64;
+    border: none;
+    box-shadow: 2px 2px 1px lightblue;
 }

@@ -1,9 +1,9 @@
 import React,{useEffect, useState} from 'react'
-import {collection, getDocs,addDoc, deleteDoc, doc} from 'firebase/firestore'
+import {collection, getDocs,addDoc, deleteDoc, doc,updateDoc} from 'firebase/firestore'
 import {db,auth,useAuth} from '../fire'
 import '../Styles/Post.css'
 import anh2 from '../Images/profile.png'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Modal} from 'react-bootstrap'
 import { BsNewspaper } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
 import PaginationAdmin from '../Components/PaginationAdmin/Pagination'
@@ -20,12 +20,18 @@ function Post() {
 
   const postsCollectionRef = collection(db,"posts")
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [input, setInput] = useState()
+
   useEffect(()=>{
     const getPosts = async() => {
       const data = await getDocs(postsCollectionRef)
       setPostList(data.docs.map((doc) => ({...doc.data(),id:doc.id})))
     }
-
     getPosts()
   })
 
@@ -50,8 +56,22 @@ function Post() {
     }
 
     const deletePost = async (id) => {
-      const postDoc = doc(db,"posts",id)
-      await deleteDoc(postDoc)
+      const confirm = window.confirm("Bạn muốn xóa bài đăng này không");
+      if (confirm) {
+        const postDoc = doc(db,"posts",id)
+        await deleteDoc(postDoc)
+      } 
+    }
+
+    const updatePost = async (id) => {
+      const confirm = window.confirm("Bạn thực sự muốn sửa bài đăng này không");
+      if (confirm) {
+        const postDoc = doc(db,"posts",id)
+        await updateDoc(postDoc,{
+          content: input,
+        })
+      } 
+      handleClose()
     }
 
   return (
@@ -107,8 +127,32 @@ function Post() {
       <div className='post_content'>
         {dataEachPage.map((post)=>(
         <div key={post.author.id} className='post'>
-          <h5 className='tieude text-white text-center border-bottom pb-2'>{post.title} <span className='float-end bg-dark'><button onClick={()=> {deletePost(post.id)}}>&#128465;</button></span></h5>
-          <h6 className='text-white text-center'>Tác giả : {post.author.name}</h6>
+          <div className='container'>
+            <div className='row border-bottom pb-1'>
+              <div className='col title'>{post.title}</div>
+              <div className='col d-flex flex-row-reverse'>
+                <button className='button_delete' onClick={()=> {deletePost(post.id)}}>Xóa</button>
+                <button className='button_fix' onClick={handleShow}>Sửa</button>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Sửa nội dung</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <input placeholder='Nhập nôi dung cần sửa' value={input} onChange={e => setInput(e.target.value)}></input>
+                  </Modal.Body>
+                  <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Hủy
+                  </Button>
+                  <Button variant="primary" onClick={()=> {updatePost(post.id)}}>
+                    Lưu thay đổi
+                  </Button>
+                  </Modal.Footer>
+                </Modal>
+              </div>
+            </div>
+          </div>
+          <h6 className='text-white text-center mt-1 border-bottom pb-1'>Tác giả : {post.author.name}</h6>
           <p className='content'>{post.content}</p>
         </div>
         ))}
