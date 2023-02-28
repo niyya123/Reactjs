@@ -1,8 +1,51 @@
-.dk{
-    width: 35%;
+@media screen and (max-width:600px) {
+    .dk{
+    width: 90%;
     border : 1px solid black;
     border-radius: 10px;
     background-color: #23323b;
+    }
+    .p1{
+    width: 80%;
+    color : white;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.p2{
+    color: aqua;
+    width: 80%;
+    text-align:center;
+    font-size: 17px;
+    margin: auto;
+    margin-top: 20px;
+}
+}
+
+@media screen and (min-width:601px) {
+    .dk{
+    width: 50%;
+    border : 1px solid black;
+    border-radius: 10px;
+    background-color: #23323b;
+}
+.p1{
+    width: 50%;
+    color : white;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.p2{
+    color: aqua;
+    width: 50%;
+    text-align:center;
+    font-size: 17px;
+    margin: auto;
+    margin-top: 20px;
+}
 }
 
 .dk p:nth-child(1){
@@ -111,22 +154,7 @@
     margin-right: 30px;
 }
 
-.p1{
-    width: 50%;
-    color : white;
-    text-align: center;
-    margin: auto;
-    margin-top: 10px;
-}
 
-.p2{
-    color: aqua;
-    width: 60%;
-    text-align:center;
-    font-size: 17px;
-    margin: auto;
-    margin-top: 20px;
-}
 
 .btn{
     margin: auto;

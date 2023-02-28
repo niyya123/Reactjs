@@ -1,24 +1,43 @@
-
-.post1{
-    width: 60%;
-    border: 2px solid black;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding-bottom: 15px;
+@media screen and (min-width:600px) {
+    .post1{
+        width: 60%;
+        border: 2px solid black;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding-bottom: 15px;
+    }
+    .ip{
+        border: 1px dashed black;
+        width: 30%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
+
+@media screen and (max-width:600px) {
+    .post1{
+        width: 90%;
+        border: 2px solid black;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding-bottom: 15px;
+    }
+    .ip{
+        border: 1px dashed black;
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
 
 .da{
     text-align: center;
     margin-top: 10px;
 }
 
-.ip{
-    border: 1px dashed black;
-    width: 30%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 .anhdang{
     margin-left: 10px;

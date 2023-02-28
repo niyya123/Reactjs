@@ -1,24 +1,33 @@
-.banner1 {
-    background: url('../Images/petgalbg.jpg');
+.banner{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+.banner_img{
+    width: 100%;
     border-radius: 5px;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    width: 50%;
-    margin : auto;
-    margin-top: 20px;
 }
-
-.banner1 p{
-    color: blueviolet;
-    font-size: 30px;
-    font-weight: 600;
+@media screen and (max-width:600px) {
+    .banner p{
+        position: absolute;
+        color: purple;
+        font-size: 25px;
+        font-weight: 600;
+        top : 25%;
+        width: 90% ;
+        text-align: center;
+    }
 }
-
-.nd{
-    margin-top: 20px;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-bottom: 20px;
+@media screen and (min-width:601px) {
+    .banner p{
+        position: absolute;
+        color: purple;
+        font-size: 25px;
+        font-weight: 600;
+        top : 50%;
+        width: 90% ;
+        text-align: center;
+    }
 }
 
 .user{
@@ -26,7 +35,7 @@
     border-radius: 100%;
 }
 
-.user1{
-    width : 10%;
-    border-radius: 100%;
+.accordion{
+    width: 75%;
+    margin: auto;
 }

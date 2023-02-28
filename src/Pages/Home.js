@@ -1,8 +1,14 @@
 import React from 'react'
 import {} from "react-bootstrap"
-import { } from 'react-bootstrap'
+import {Carousel } from 'react-bootstrap'
 import {} from 'react-router-dom'
 import husky from '../Images/husky.jpg'
+import slide1 from '../Images/website.png'
+import slide2 from '../Images/slide2.png'
+import slide3 from '../Images/slide3.png'
+import slide4 from '../Images/slide4.jpg'
+import slide5 from '../Images/slide5.jpg'
+import slide6 from '../Images/slide6.png'
 import {BiBookContent,BiSupport} from 'react-icons/bi'
 import {VscSymbolInterface} from 'react-icons/vsc'
 import "../Styles/Home.css"
@@ -21,41 +27,98 @@ function Home() {
       </div>
       <div className="row nd2">
         <div className="col 1 text-center">
-          <div className='nd2_col1_content'>
-          <div className="row ms-3  text-center">
-            <h4 className='text-info'>Giới thiệu về Web</h4>
-          </div>
-          <div className="row w-75 mx-auto text-center">
-            <p>PetGal là website xây dựng trên tiêu chí là nơi để mọi người chia sẻ các bài viết, hình ảnh hằng ngày về pet của họ</p>
-            <p>Tất cả thông tin chúng tôi đều được chọn lọc từ nhiều nguồn có chọn lọc, đã qua thực nghiệm để có thể mang lại thông tin chính xác nahast cho mọi người khi tìm kiếm trên trang web</p>
-          </div>
-          </div>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide1}
+                alt="First slide"
+              />
+              <Carousel.Caption>
+                <h3>PetGal</h3>
+                <p>Website chia sẻ về thú cưng</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide2}
+                alt="Second slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Chia sẻ ảnh</h3>
+                <p>Gửi hình ảnh vui nhộn về thú cưng</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide3}
+                alt="Third slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Post về thú cưng</h3>
+                <p>
+                  Đặt câu hỏi, mẹo,... thông qua bài viết.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </div>
         <div className="col">
-          <img src={husky} className='anhmh'/>
+        <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide4}
+                alt="First slide"
+              />
+              <Carousel.Caption>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide5}
+                alt="Second slide"
+              />
+
+              <Carousel.Caption>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={slide6}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
       <div className='pr2'>
-      <div className='nd3 w-75 mx-auto'>
+      <div className='nd3 w-100 mx-auto'>
         <h3 className='text-center text-success'>Lời cảm ơn</h3>
-        <p className='text-center'>Cảm ơn các bạn đã quan tâm đến nội dung của trang web. Hy vọng mọi người sẽ có một khoảng thời gian giải trí trên website của chúng tôi</p>
-        <p className='text-center'>Nội dung chúng tôi mang đến đều được thông qua kiểm duyệt nghiệm ngặt</p>
+        <p className='text-center'>Cảm ơn mọi người đã truy cập website của chúng tôi</p>
+        <p className='text-center'>Website chúng tôi đảm bảo các tiêu chí sau</p>
       </div>
       <div className="row nd4">
         <div className="col text-center ">
-        <BiBookContent className='icon text-primary'/>
-        <h5 className='text-primary'>Nội dung</h5>
-        <p className='w-50 mx-auto'>Nội dung kiểm soát nghiêm ngặt, có kiểm chứng</p>
+          <BiBookContent className='icon text-primary'/>
+          <h5 className='text-primary'>Nội dung</h5>
+          <p className='w-100 mx-auto'>Có kiểm soát, kiểm chứng</p>
         </div>
         <div className="col text-center">
-        <VscSymbolInterface className='icon gd'/>
-        <h5 className='gd'>Giao diện</h5>
-        <p className='w-50 mx-auto'>Giao diện trực quan, dễ sử dụng</p>
+          <VscSymbolInterface className='icon gd'/>
+          <h5 className='gd'>Giao diện</h5>
+          <p className='w-100 mx-auto'>Trực quan, dễ sử dụng</p>
         </div>
         <div className="col text-center">
-        <BiSupport className='icon ht'/>
-        <h5 className='ht mb-2'>Hỗ trợ</h5>
-        <p className='w-50 mx-auto'>Hỗ trợ nhanh chóng cho người dùng thông qua chatbox</p>
+          <BiSupport className='icon ht'/>
+          <h5 className='ht mb-2'>Hỗ trợ</h5>
+          <p className='w-100 mx-auto'>Nhanh chóng qua chatbox</p>
         </div>
       </div>
       </div>
