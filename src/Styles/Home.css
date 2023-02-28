@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     background-position: center;
     margin-top: 10px;
-    margin-bottom: 10px;
     height: 500px;
     width: 100%;
 }
@@ -14,7 +13,7 @@
 }
 
 .nd2{
-    margin-top: 100px;
+    margin-top: 2%;
 }
 .nd2 > div:nth-child(1){
     background-image: url('/src/Images/presentation1.jpg');
@@ -35,7 +34,7 @@
 }
 
 .nd3{
-    margin-top: 50px;
+    margin-top: 2%;
 }
 
 .icon{
@@ -44,7 +43,7 @@
 }
 
 .nd4{
-    margin-top: 50px;
+    margin-top: 2%;
 }
 
 .gd{

@@ -5,7 +5,7 @@
     import {createUserWithEmailAndPassword} from 'firebase/auth'
     import {auth, colRef, useAuth, db} from '../fire'
     import {addDoc} from 'firebase/firestore' 
-    
+    import {motion} from 'framer-motion'
     
     function SignUp() {
 
@@ -38,7 +38,7 @@
       }
 
       return (
-        <div>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
           <Container className='mt-2 mb-2 pb-3 dk'>
             <p>Đăng ký</p>
             <p>Nhanh chóng và dễ dàng</p>
@@ -64,7 +64,7 @@
             <p className='p1'>Khi bạn nhấn đăng ký, bạn đã đồng ý với các <a href="">Chính sách quy định</a> của chúng tôi</p>
             <p className='p2'>Chúc bạn có thời gian tận hưởng tốt đẹp trên website của chúng tôi</p>
           </Container>
-        </div>
+        </motion.div>
       )
     }
     

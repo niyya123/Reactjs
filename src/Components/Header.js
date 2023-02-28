@@ -37,8 +37,8 @@ function Header() {
         <Navbar sticky="top" bg="dark" expand="lg">
         <Container fluid>
           <img src={anh1} className="logo" alt="có thể là ảnh logo"/>
-          <Navbar.Brand href="#home" className='text-info brand'>
-            PetGal
+          <Navbar.Brand as="div" className='text-info brand'>
+            <Link to="/home" className='brand-name'>PetGal</Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -7,12 +7,12 @@ import {BiBookContent,BiSupport} from 'react-icons/bi'
 import {VscSymbolInterface} from 'react-icons/vsc'
 import "../Styles/Home.css"
 import ReactPlayer from 'react-player'
-
+import {motion} from 'framer-motion'
 
 function Home() {
 
   return (
-    <div className='Home'>
+    <motion.div className='Home' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <div className='text-center nd1 bg-dark'>
         <div className='start-50 text-white'>
           <h3>PetGal</h3>
@@ -63,7 +63,7 @@ function Home() {
         <h2 className='text-center text-white'>Video thú vị về thú cưng</h2>
         <ReactPlayer controls width='900px' height='500px' url='https://www.youtube.com/watch?v=vlVjnoYkHvk&ab_channel=K%27eyushTheStuntDog'/>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

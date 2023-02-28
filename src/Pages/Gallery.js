@@ -6,6 +6,7 @@ import "../Styles/Gallery.css"
 import {db,auth,useAuth,storage} from '../fire'
 import {ref, uploadBytes,listAll,getDownloadURL} from 'firebase/storage'
 import {v4} from 'uuid'
+import {motion} from 'framer-motion'
 
 import { Tabs, Tab,Form,Button,Nav } from "react-bootstrap"
 
@@ -57,7 +58,7 @@ function Gallery() {
   },[])
 
   return (
-    <div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
     <div className='container post1'>
       <div className=''>
         <h4 className='da'>Đăng ảnh</h4>
@@ -123,7 +124,7 @@ function Gallery() {
     </Col>
   </Row>
 </Tab.Container>
-  </div>
+  </motion.div>
   )
 }
 

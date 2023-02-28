@@ -7,7 +7,7 @@ import {Form, Button, Modal} from 'react-bootstrap'
 import { BsNewspaper } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
 import PaginationAdmin from '../Components/PaginationAdmin/Pagination'
-
+import {motion} from 'framer-motion'
 
 function Post() {
 
@@ -75,7 +75,7 @@ function Post() {
     }
 
   return (
-    <div className='PostPage'>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='PostPage'>
       <div className='TopPostPage'>
         <div className='div'>
           <h4 className='h'>Tạo bài viết</h4>
@@ -165,7 +165,7 @@ function Post() {
             itemsPerPage={postsPerPage}
             onPageChange={(page) => setCurrentPage(page)}/>
             </div>
-    </div>
+    </motion.div>
   )
 }
 

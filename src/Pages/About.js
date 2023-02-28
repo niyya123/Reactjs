@@ -3,10 +3,11 @@ import {Accordion, Container} from 'react-bootstrap'
 import bg from '../Images/petgalbg.jpg'
 import user from '../Images/user.png'
 import '../Styles/About.css'
+import {motion} from 'framer-motion'
 
 function About() {
   return (
-    <div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <div className="banner1">
         <p className='text-center'>PetGal : Nơi chia sẻ mọi thứ về thú cưng</p>
       </div>
@@ -44,7 +45,7 @@ function About() {
         </Accordion.Item>
       </Accordion>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -8,6 +8,7 @@ import {TiSocialGooglePlus} from 'react-icons/ti'
 
 import {useAuth,db } from '../fire'
 import {collection,getDocs} from 'firebase/firestore'
+import {motion} from 'framer-motion'
 
 function Detail() {
 
@@ -38,7 +39,7 @@ function Detail() {
   }
 
   return ( 
-    <div className='DetailPage'>   
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='DetailPage'>   
       <div className='TopDP'>
         <aside className="profile-card">
 
@@ -82,7 +83,7 @@ function Detail() {
         </aside>
       </div>
       {/* <button onClick={handleTest}>test</button> */}
-    </div>
+    </motion.div>
   )
 }
 

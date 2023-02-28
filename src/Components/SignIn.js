@@ -26,7 +26,8 @@ function SignIn() {
         }
     }
 
-  return    <div>
+  return    <div className='row'>
+                <div className='col'>
                 <div className='dangnhap'>
                     <input type="email" placeholder="Nhập email" className='tk' onChange={(e)=>{
                 setLoginEmail(e.target.value)
@@ -34,9 +35,13 @@ function SignIn() {
                     <input type="password" placeholder="Nhập mật khẩu" className='mk' onChange={(e)=>{
                 setLoginPassword(e.target.value)
                 }}/>
-                    <Button type="submit" className='nut' disabled={loading || currentUser} onClick={login}>
+                    
+                </div>
+                </div>
+                <div className='col nut'>
+                <Button type="submit" className='' disabled={loading || currentUser} onClick={login}>
                         Đăng nhập
-                    </Button>
+                </Button>
                 </div>
             </div>
 }
