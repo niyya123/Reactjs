@@ -209,11 +209,11 @@ img{
 .post_content{
     display: flex;
     margin: auto;
-    width: 90%;
+    width: 100%;
 }
 .post{
     background-color: #016e74;
-    width: 30%;
+    width: 32%;
     padding-top: 10px;
     padding-bottom: 10px;
     margin: auto;
@@ -228,7 +228,8 @@ img{
 }
 .content{
     color : white;
-    text-indent: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .title{
     color: white;
@@ -240,10 +241,12 @@ img{
 background: linear-gradient(90deg, rgba(18,84,190,1) 0%, rgba(0,255,237,1) 100%);
 box-shadow: 2px 2px 1px lightblue;
 margin-right: 5px;
+max-height: 85%;
 }
 .button_delete{
     color:white;
     background-color: #362d64;
     border: none;
     box-shadow: 2px 2px 1px lightblue;
+    max-height: 85%;
 }

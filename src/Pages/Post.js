@@ -127,7 +127,7 @@ function Post() {
       <div className='post_content'>
         {dataEachPage.map((post)=>(
         <div key={post.author.id} className='post'>
-          <div className='container'>
+          <div className='container' fluid>
             <div className='row border-bottom pb-1'>
               <div className='col title'>{post.title}</div>
               <div className='col d-flex flex-row-reverse'>
