@@ -3,7 +3,7 @@ import {collection, getDocs,addDoc, deleteDoc, doc,updateDoc} from 'firebase/fir
 import {db,auth,useAuth} from '../fire'
 import '../Styles/Post.css'
 import anh2 from '../Images/profile.png'
-import {Form, Button, Modal} from 'react-bootstrap'
+import {Form, Button, Modal, Container,Col,Row} from 'react-bootstrap'
 import { BsNewspaper } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
 import PaginationAdmin from '../Components/PaginationAdmin/Pagination'
@@ -76,60 +76,65 @@ function Post() {
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='PostPage'>
-      <div className='TopPostPage'>
-        <div className='div'>
-          <h4 className='h'>Tạo bài viết</h4>
-          <hr className='hr1'></hr>
-          <div className='div1'>
-            <div className='div2'>
-              <img src={anh2} className="profileImg" alt="có thể là ảnh profile"/>
-            </div>
-            <div className='div3'>
-              <span className='name'>{currentUser?.email}</span>
+      <Container className='TopPostPage' fluid>
+        <Row className='title'>
+          <h4 className='text-primary mt-1 text-center'>Tạo bài viết</h4>
+        </Row>
+        <Row className='mt-2'>
+          <Col lg={{span:1,offset:3}} xs={{span:1}}>
+            <img src={anh2} className="profileImg" alt="có thể là ảnh profile"/>
+          </Col>
+          <Col lg={3} xs={{span:5,offset:2}}>
+            <Row className=''>
+              <p className=''>{currentUser?.email}</p>
+            </Row>
+            <Row className=''>
               <Form.Select aria-label="Default select example">
                 <option>Công khai</option>
                 <option>Bạn bè</option>
                 <option>Chỉ mình tôi</option>
                 <option>Tùy chỉnh</option>
               </Form.Select>
-            </div>
-          </div>
-          <div className='div4'>
-            <p></p>
-            <Form className='form'>
-              <Form.Group className="mb-3" controlId="formBasicTitle">
-                <Form.Label>Tiêu đề</Form.Label>
-                <Form.Control type="text" 
-                placeholder="Enter title" 
-                onChange={(e)=>{
-                  setTitle(e.target.value)
-                }}/>
-              </Form.Group>
+            </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Form className='form'>
+            <Form.Group className="mb-3" controlId="formBasicTitle">
+              <Form.Label><h4 className='post-title'>Tiêu đề</h4></Form.Label>
+              <Form.Control type="text" 
+              placeholder="Enter title" 
+              onChange={(e)=>{
+                setTitle(e.target.value)
+              }} className="input"/>
+            </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicContent">
-                <Form.Label>Content</Form.Label>
-                <Form.Control as="textarea" rows={5} 
-                placeholder="Enter Content"
-                onChange={(e)=>{
-                  setContent(e.target.value)
-                }} />
-              </Form.Group>
-              
-              <Button variant="primary" onClick={createPost} disabled={loading || !currentUser}>
-                Submit
-              </Button>
-            </Form>
-          </div>
-        </div>
-      </div>
+            <Form.Group className="mb-3" controlId="formBasicContent">
+              <Form.Label><h4 className='post-title'>Nội dung</h4></Form.Label>
+              <Form.Control as="textarea" rows={5} 
+              placeholder="Enter Content"
+              onChange={(e)=>{
+                setContent(e.target.value)
+              }} />
+            </Form.Group>
+          </Form>
+        </Row>
+        <Row>
+          <Col className='text-center mb-1'>
+            <Button  variant="primary" onClick={createPost} disabled={loading || !currentUser}>
+              Post bài viết
+            </Button>
+          </Col>
+        </Row>
+      </Container>
       <h4 className='text-success'>Bài viết mới nhất <BsNewspaper/></h4>
       <div className='text-center noti' >Không có bài đăng nào</div>
-      <div className='post_content'>
+      <Container className='post_content'>
         {dataEachPage.map((post)=>(
         <div key={post.author.id} className='post'>
           <div className='container' fluid>
             <div className='row border-bottom pb-1'>
-              <div className='col title'>{post.title}</div>
+              <div className='col posted-title'>{post.title}</div>
               <div className='col d-flex flex-row-reverse'>
                 <button className='button_delete' onClick={()=> {deletePost(post.id)}}>Xóa</button>
                 <button className='button_fix' onClick={handleShow}>Sửa</button>
@@ -156,7 +161,7 @@ function Post() {
           <p className='content'>{post.content}</p>
         </div>
         ))}
-      </div>
+      </Container>
       <div className='dock'>
       <PaginationAdmin
             className="pagination"
