@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import {collection, getDocs,addDoc, deleteDoc, doc,updateDoc} from 'firebase/firestore'
+import {collection, getDocs,addDoc, deleteDoc, doc,updateDoc, query, where, QuerySnapshot, orderBy, limit, onSnapshot} from 'firebase/firestore'
 import {db,auth,useAuth} from '../fire'
 import '../Styles/Post.css'
 import anh2 from '../Images/profile.png'
@@ -7,7 +7,7 @@ import {Form, Button, Modal, Container,Col,Row} from 'react-bootstrap'
 import { BsNewspaper } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
 import PaginationAdmin from '../Components/PaginationAdmin/Pagination'
-import {motion} from 'framer-motion'
+import {filterProps, motion} from 'framer-motion'
 
 function Post() {
 
@@ -17,8 +17,9 @@ function Post() {
   const [content, setContent] = useState("")
 
   const [postList, setPostList] = useState([])
+  const [testPostList, setTestPostList] = useState([])
 
-  const postsCollectionRef = collection(db,"posts")
+  const postsCollectionRef = collection(db,'posts')
 
   const [show, setShow] = useState(false);
 
@@ -26,20 +27,6 @@ function Post() {
   const handleShow = () => setShow(true);
 
   const [input, setInput] = useState()
-
-  useEffect(()=>{
-    const getPosts = async() => {
-      const data = await getDocs(postsCollectionRef)
-      setPostList(data.docs.map((doc) => ({...doc.data(),id:doc.id})))
-    }
-    getPosts()
-  })
-
-  const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(3);
-    const firstPageIndex = (currentPage - 1) * postsPerPage;
-    const lastPageIndex = firstPageIndex + postsPerPage;
-    const dataEachPage = postList.slice(firstPageIndex, lastPageIndex);
 
     if (postList.length > 0){
       let a = document.getElementsByClassName('noti')[0];
@@ -73,6 +60,31 @@ function Post() {
       } 
       handleClose()
     }
+
+    useEffect(()=>{
+      const getPosts = async () => {
+        try {
+          const q = query(postsCollectionRef)
+          onSnapshot(q,(snapshot)=>{
+            const data = []
+            snapshot.docs.forEach((doc)=>{
+              data.push({...doc.data(),id:doc.id})
+            })
+            setPostList([])
+            setPostList(data)
+          })
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      getPosts()
+    },[])
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(3);
+    const firstPageIndex = (currentPage - 1) * postsPerPage;
+    const lastPageIndex = firstPageIndex + postsPerPage;
+    const dataEachPage = postList.slice(firstPageIndex, lastPageIndex);
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='PostPage'>

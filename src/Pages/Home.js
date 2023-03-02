@@ -25,7 +25,7 @@ function Home() {
           <h4>Chia sẻ mọi thứ về Pet của bạn</h4>
         </div>
       </div>
-      <div className="row nd2">
+      <div className="row mt-1">
         <div className="col 1 text-center">
           <Carousel>
             <Carousel.Item>
@@ -47,8 +47,7 @@ function Home() {
               />
 
               <Carousel.Caption>
-                <h3>Chia sẻ ảnh</h3>
-                <p>Gửi hình ảnh vui nhộn về thú cưng</p>
+                <p>Chia sẻ ảnh thú cưng</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -59,10 +58,7 @@ function Home() {
               />
 
               <Carousel.Caption>
-                <h3>Post về thú cưng</h3>
-                <p>
-                  Đặt câu hỏi, mẹo,... thông qua bài viết.
-                </p>
+                <p>Post về thú cưng</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
