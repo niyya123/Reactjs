@@ -91,7 +91,7 @@ function Gallery() {
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
   <Row className='ms-1'>
     <Col sm={1}>
-      <Nav variant="pills" className="flex-column">
+      <Nav variant="pills" className="flex-column w-25">
         <Nav.Item>
           <Nav.Link eventKey="first">Chó</Nav.Link>
         </Nav.Item>
