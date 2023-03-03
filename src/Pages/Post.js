@@ -24,9 +24,13 @@ function Post() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleShow = async (id) => 
+  {
+    setPostId(id)
+    setShow(true);
+  }
   const [input, setInput] = useState()
+  const [postId, setPostId] = useState()
 
     if (postList.length > 0){
       let a = document.getElementsByClassName('noti')[0];
@@ -50,13 +54,13 @@ function Post() {
       } 
     }
 
-    const updatePost = async (id) => {
+    const updatePost = async () => {
       const confirm = window.confirm("Bạn thực sự muốn sửa bài đăng này không");
       if (confirm) {
-        const postDoc = doc(db,"posts",id)
+        const postDoc = doc(db,"posts",postId)
         await updateDoc(postDoc,{
           content: input,
-        })
+        });
       } 
       handleClose()
     }
@@ -149,7 +153,7 @@ function Post() {
               <div className='col posted-title'>{post.title}</div>
               <div className='col d-flex flex-row-reverse'>
                 <button className='button_delete' onClick={()=> {deletePost(post.id)}}>Xóa</button>
-                <button className='button_fix' onClick={handleShow}>Sửa</button>
+                <button className='button_fix' onClick={()=> {handleShow(post.id)}}>Sửa</button>
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
                     <Modal.Title>Sửa nội dung</Modal.Title>
@@ -161,7 +165,7 @@ function Post() {
                   <Button variant="secondary" onClick={handleClose}>
                     Hủy
                   </Button>
-                  <Button variant="primary" onClick={()=> {updatePost(post.id)}}>
+                  <Button variant="primary" onClick={()=> {updatePost()}}>
                     Lưu thay đổi
                   </Button>
                   </Modal.Footer>
