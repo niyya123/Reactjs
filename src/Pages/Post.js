@@ -42,6 +42,7 @@ function Post() {
         title,
         content, 
         author:{name:auth.currentUser.email , id:auth.currentUser.uid},
+        date: Date(),
       })
       alert("Bài đăng đã được thêm thành công")
     }
@@ -60,6 +61,7 @@ function Post() {
         const postDoc = doc(db,"posts",postId)
         await updateDoc(postDoc,{
           content: input,
+          date: Date(),
         });
       } 
       handleClose()
@@ -68,7 +70,7 @@ function Post() {
     useEffect(()=>{
       const getPosts = async () => {
         try {
-          const q = query(postsCollectionRef)
+          const q = query(postsCollectionRef,orderBy("date","desc"))
           onSnapshot(q,(snapshot)=>{
             const data = []
             snapshot.docs.forEach((doc)=>{
