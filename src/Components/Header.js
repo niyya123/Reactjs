@@ -34,35 +34,35 @@ function Header() {
 
   return (
     <div>
-        <Navbar sticky="top" bg="dark" expand="lg">
-        <Container fluid>
-          <img src={anh1} className="logo" alt="có thể là ảnh logo"/>
-          <Navbar.Brand as="div" className='text-info brand'>
-            <Link to="/home" className='brand-name'>PetGal</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link to="/home" className='navBtn'>Trang chủ</Link>
-              <Link to="/gallery" className='navBtn'>Thư viện</Link>
-              <Link to="/post" className='navBtn'>Đăng bài</Link>
-              <Link to="/about" className='navBtn'>Về chúng tôi</Link>
-              <Link to="/signup" className='navBtn'>Đăng ký</Link>
-            </Nav>
-          </Navbar.Collapse>
-          <SignIn/>
-          <Dropdown className='menuDropdown'>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" className="menuBtn">
-              <span>{currentUser?.email}</span>
-            </Dropdown.Toggle>
+        <Navbar sticky="top" bg="dark" expand="lg" className='nav'>
+          <Container fluid>
+            <img src={anh1} className="logo" alt="có thể là ảnh logo"/>
+            <Navbar.Brand as="div" className='text-info brand'>
+              <Link to="/home" className='brand-name'>PetGal</Link>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className='custom_navbar_toggle'/>
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="navigation">
+                <Link to="/home" className='navBtn'>Trang chủ</Link>
+                <Link to="/gallery" className='navBtn'>Thư viện</Link>
+                <Link to="/post" className='navBtn'>Đăng bài</Link>
+                <Link to="/about" className='navBtn'>Về chúng tôi</Link>
+                <Link to="/signup" className='navBtn'>Đăng ký</Link>
+              </Nav>
+            </Navbar.Collapse>
+            <SignIn className="signin"/>
+            <Dropdown className='menuDropdown'>
+              <Dropdown.Toggle variant="success" id="dropdown-basic" className="menuBtn">
+                <span>{currentUser?.email}</span>
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={handleBio}>Thông tin tài khoản</Dropdown.Item>
-              <Dropdown.Item onClick={logout}>Đăng xuất</Dropdown.Item>
-              {/* <Dropdown.Item onClick={handleTest}>Test</Dropdown.Item> */}
-            </Dropdown.Menu>
-          </Dropdown>
-        </Container>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={handleBio}>Thông tin tài khoản</Dropdown.Item>
+                <Dropdown.Item onClick={logout}>Đăng xuất</Dropdown.Item>
+                {/* <Dropdown.Item onClick={handleTest}>Test</Dropdown.Item> */}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
       </Navbar>
     </div>
   )

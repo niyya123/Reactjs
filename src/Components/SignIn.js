@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap'
+import { Button,Col } from 'react-bootstrap'
 import React,{useState, useRef} from 'react'
 
 
@@ -26,8 +26,8 @@ function SignIn() {
         }
     }
 
-  return    <div className='row'>
-                <div className='col'>
+  return    <div className='row dangnhap'>
+                <Col xs={{span:6,offset:1}}>
                 <div className='dangnhap'>
                     <input type="email" placeholder="Nhập email" className='tk' onChange={(e)=>{
                 setLoginEmail(e.target.value)
@@ -37,12 +37,12 @@ function SignIn() {
                 }}/>
                     
                 </div>
-                </div>
-                <div className='col nut'>
+                </Col>
+                <Col className='col nut'>
                 <Button type="submit" className='' disabled={loading || currentUser} onClick={login}>
                         Đăng nhập
                 </Button>
-                </div>
+                </Col>
             </div>
 }
 
