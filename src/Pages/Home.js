@@ -120,7 +120,7 @@ function Home() {
       </div>
       <div className="row nd5">
         <h2 className='text-center text-white'>Video thú vị về thú cưng</h2>
-        <ReactPlayer controls width='900px' height='500px' url='https://www.youtube.com/watch?v=vlVjnoYkHvk&ab_channel=K%27eyushTheStuntDog'/>
+        <ReactPlayer controls url='https://www.youtube.com/watch?v=vlVjnoYkHvk&ab_channel=K%27eyushTheStuntDog'/>
       </div>
     </motion.div>
   )

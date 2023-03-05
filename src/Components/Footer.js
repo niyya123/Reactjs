@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Col, Row } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 import anh1 from '../Images/Screenshot 2022-05-25 111819.png'
@@ -47,8 +47,18 @@ function Footer() {
                 </div>
                 <div className='col-md-3 cot4'>
                     <h4>Đăng ký</h4>
-                    <hr/>       
-                    <input type="text" placeholder='Nhập emails'/><i><BsMailbox2/></i> <Button onClick={dangky}>Đăng ký</Button>
+                    <hr/>
+                    <Row>
+                        <Col lg={5} xs={8}>
+                        <input type="text" placeholder='Nhập emails'/>
+                        </Col>
+                        <Col lg={2} xs={1} className="sub-icon">
+                        <i><BsMailbox2/></i>
+                        </Col>
+                        <Col lg={5} xs={7}>
+                        <Button className='sub-btn' onClick={dangky}>Đăng ký</Button>
+                        </Col>
+                    </Row>       
                     <p>Đăng ký để nhận thông báo sớm nhất</p>
                 </div>
             </div>

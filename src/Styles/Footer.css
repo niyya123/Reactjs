@@ -110,6 +110,7 @@
 .cot4 input{
     border-radius: 5px;
     padding: 5px;
+    width: 100%;
 }
 
 .cot4 i{
@@ -117,13 +118,25 @@
     color: black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    margin-left: -35px;
-    padding-top: 2px;
-    padding-bottom: 7px;
+    padding-bottom: 8.5px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-left: -35px;
+    border-bottom: solid 1px black;
 }
 
 .cot4 p{
     margin-top: 20px;
+}
+.sub-btn{
+    width:70%;
+}
+
+@media screen and (max-width:600px) {
+    .sub-icon{
+        margin-left: 5px;
+    }
+    .sub-btn{
+        width:100%;
+    }
 }

@@ -89,9 +89,9 @@ function Gallery() {
     </div>
     <h5 className='text-info mt-4 mx-auto text-center bg-dark w-50 p-2 rounded'>Những ảnh mà bạn đã chia sẻ</h5>
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-  <Row className='ms-1'>
-    <Col sm={1}>
-      <Nav variant="pills" className="flex-column w-25">
+  <Row>
+    <Col lg={{span:1}} className='tab-panel'>
+      <Nav variant="pills" className="flex-column w-100">
         <Nav.Item>
           <Nav.Link eventKey="first">Chó</Nav.Link>
         </Nav.Item>
@@ -100,7 +100,7 @@ function Gallery() {
         </Nav.Item>
       </Nav>
     </Col>
-    <Col sm={11}>
+    <Col lg={{span:11}} className='tab-content'>
       <Tab.Content>
         <Tab.Pane eventKey="first">
           <div class="text-center">

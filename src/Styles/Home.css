@@ -1,57 +1,115 @@
-.nd1{
-    background-image:url('../Images/nd1.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 10px;
-    height: 500px;
-    width: 100%;
-}
 
-.nd1 h3{
-    padding-top: 220px;
+@media screen and (min-width:601px) {
+    .nd1{
+        background-image:url('../Images/nd1.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 10px;
+        height: 500px;
+        width: 100%;
+    }
+    
+    .nd1 h3{
+        padding-top: 220px;
+    }
+    
+    .nd2{
+        margin-top: 2%;
+    }
+    
+    .pr2{
+        background-image: url('/src/Images/presentation2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .anhmh{
+        width: 100%;
+    }
+    
+    .nd3{
+        margin-top: 2%;
+    }
+    
+    .icon{
+        width: 100%;
+        min-height: 30px;
+    }
+    
+    .nd4{
+        margin-top: 2%;
+    }
+    
+    .gd{
+        color : purple
+    }
+    
+    .ht{
+        color : red;
+    }
+    
+    .nd5{
+        background-color: black;
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: 1% auto 1% auto;
+    }
 }
-
-.nd2{
-    margin-top: 2%;
-}
-
-.pr2{
-    background-image: url('/src/Images/presentation2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.anhmh{
-    width: 100%;
-}
-
-.nd3{
-    margin-top: 2%;
-}
-
-.icon{
-    width: 100%;
-    min-height: 30px;
-}
-
-.nd4{
-    margin-top: 2%;
-}
-
-.gd{
-    color : purple
-}
-
-.ht{
-    color : red;
-}
-
-.nd5{
-    background-color: black;
-    display:flex;
-    justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 50px;
-    margin-bottom: 10px;
+@media screen and (max-width:600px) {
+    .nd1{
+        background-image:url('../Images/nd1.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 10px;
+        height: 500px;
+        width: 100%;
+    }
+    
+    .nd1 h3{
+        padding-top: 220px;
+    }
+    
+    .nd2{
+        margin-top: 2%;
+    }
+    
+    .pr2{
+        background-image: url('/src/Images/presentation2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .anhmh{
+        width: 100%;
+    }
+    
+    .nd3{
+        margin-top: 2%;
+    }
+    
+    .icon{
+        width: 100%;
+        min-height: 25px;
+    }
+    
+    .nd4{
+        margin-top: 2%;
+    }
+    
+    .gd{
+        color : purple
+    }
+    
+    .ht{
+        color : red;
+    }
+    
+    .nd5{
+        background-color: black;
+        display:flex;
+        justify-content: center;
+        width: 100%;
+        margin: 1% auto 1% auto;
+    }
 }
