@@ -49,13 +49,13 @@ function Footer() {
                     <h4>Đăng ký</h4>
                     <hr/>
                     <Row>
-                        <Col lg={5} xs={8}>
+                        <Col lg={5} xs={5}>
                         <input type="text" placeholder='Nhập emails'/>
                         </Col>
-                        <Col lg={2} xs={1} className="sub-icon">
+                        <Col lg={2} xs={2} className="sub-icon">
                         <i><BsMailbox2/></i>
                         </Col>
-                        <Col lg={5} xs={7}>
+                        <Col lg={5} xs={4}>
                         <Button className='sub-btn' onClick={dangky}>Đăng ký</Button>
                         </Col>
                     </Row>       
