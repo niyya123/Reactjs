@@ -1,18 +1,44 @@
+.button_fix{
+    padding: 5px;
+    border-radius: 5px;
+}
+.button_delete{
+    padding: 5px;
+    border-radius: 5px;
+}
 
+.TopPostPage{
+    border: 1px black solid;
+    border-radius: 15px;
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.title{
+    border-bottom: solid 1px #000000 ;
+}
+.post_content{
+    display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px; /* Adjust the gap between items as needed */
+  width: 100%;
+}
+.post{
+    background-color: #72b791;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    min-width: 20%;
+}
 @media screen and (max-width:600px) {
     .PostPage{
     width: 100%;
 }
-.TopPostPage{
-    border: 2px black solid;
-    border-radius: 15px;
-    width: 90%;
-    margin: auto;
-    margin-top: 2%;
-}
-.title{
-    border-bottom: solid 2px #000000 ;
-}
+
 
 .profileImg{
     width: 60px;
@@ -24,23 +50,9 @@
     color: blue;
     margin: auto;
 }
-.input{
-    width: 50%;
-}
-.post_content{
-    margin: auto;
-    width: 100%;
-}
-.post{
-    background-color: #016e74;
-    width: 80%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border : 2px solid blue;
-}
+
+
+
 .dock{
     display: flex;
     align-items: center;
@@ -55,37 +67,14 @@
     color: white;
     font-weight: bold;
 }
-.button_fix{
-    margin-left:5px;
-    background: rgb(18,84,190);
-background: linear-gradient(90deg, rgba(18,84,190,1) 0%, rgba(0,255,237,1) 100%);
-box-shadow: 2px 2px 1px lightblue;
-margin-right: 5px;
-max-height: 85%;
 }
-.button_delete{
-    color:white;
-    background-color: #362d64;
-    border: none;
-    box-shadow: 2px 2px 1px lightblue;
-    max-height: 85%;
-}
-}
+
 
 @media screen and (min-width:601px) {
     .PostPage{
         width: 100%;
     }
-    .TopPostPage{
-        border: 2px black solid;
-        border-radius: 15px;
-        width: 50%;
-        margin: auto;
-        margin-top: 2%;
-    }
-    .title{
-        border-bottom: solid 2px #000000 ;
-    }
+
     .profileImg{
         width: 60px;
         height: 60px;
@@ -96,24 +85,6 @@ max-height: 85%;
         color: blue;
         margin: auto;
     }
-    .input{
-        width: 50%;
-    }
-.post_content{
-    display: flex;
-    margin: auto;
-    width: 100%;
-}
-.post{
-    background-color: #016e74;
-    width: 32%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border : 2px solid blue;
-}
 .dock{
     display: flex;
     align-items: center;
@@ -127,20 +98,5 @@ max-height: 85%;
 .posted-title{
     color: white;
     font-weight: bold;
-}
-.button_fix{
-    margin-left:5px;
-    background: rgb(18,84,190);
-background: linear-gradient(90deg, rgba(18,84,190,1) 0%, rgba(0,255,237,1) 100%);
-box-shadow: 2px 2px 1px lightblue;
-margin-right: 5px;
-max-height: 85%;
-}
-.button_delete{
-    color:white;
-    background-color: #362d64;
-    border: none;
-    box-shadow: 2px 2px 1px lightblue;
-    max-height: 85%;
 }
 }

@@ -6,7 +6,7 @@ function CopyRight() {
   return    <div>
                 <p className='cpr'>
                     <i><FaRegCopyright/></i>{" "}
-                    2021-2022. Bản quyền design thuộc về 19521911@gm.uit.edu.vn
+                    2024. Bản quyền thiết kế thuộc về htnguyen.uit@gmail.com
                 </p>
             </div>
 }

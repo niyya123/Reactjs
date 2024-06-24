@@ -20,7 +20,7 @@ function Home() {
   return (
     <motion.div className='Home' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <div className='text-center nd1 bg-dark'>
-        <div className='start-50 text-white'>
+        <div className=' text-white'>
           <h3>PetGal</h3>
           <h4>Chia sẻ mọi thứ về Pet của bạn</h4>
         </div>
